@@ -1,0 +1,49 @@
+--------------------------------------------------
+// 통과날짜 : 2022-04-15 (금)
+// 문제번호 : 10872
+// 문제주제 : 재귀함수 구현
+
+import java.util.*;
+
+public class Main {
+    public static int factorial (int N) {
+        if (N <= 1) return 1;
+        return N * factorial(N - 1);
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        System.out.println(factorial(N));
+    }
+}
+
+
+--------------------------------------------------
+// 통과날짜 : 2022-04-15 (금)
+// 문제번호 : 10870
+// 문제주제 : 재귀함수 구현
+
+import java.util.*;
+
+public class Main {
+
+    public static int fibonacci(int n) {
+        if (n <= 1) return n;
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> answerList = new ArrayList<>();
+        answerList.add(0);
+        answerList.add(1);
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int i = 2; i <= N; i++) {
+            int sum = fibonacci(i-1) + fibonacci(i-2);
+            answerList.add(sum);
+        }
+        System.out.println(answerList.get(N));
+    }
+}
