@@ -1,4 +1,4 @@
-package level5_함수_.Q1_15596;
+package level5_함수_Clear.Q1_15596;
 
 /*
 문제) 정수 N개의 합

@@ -1,4 +1,4 @@
-package level5_함수_.Q2_4673;
+package level5_함수_Clear.Q2_4673;
 
 /*
 문제) 셀프 넘버
