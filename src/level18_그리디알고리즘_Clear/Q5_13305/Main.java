@@ -1,4 +1,4 @@
-package level18_그리디알고리즘_.Q5_13305;
+package level18_그리디알고리즘_Clear.Q5_13305;
 
 /*
 문제)

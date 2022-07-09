@@ -1,4 +1,4 @@
-package level18_그리디알고리즘_.Q2_1931;
+package level18_그리디알고리즘_Clear.Q2_1931;
 
 /*
 문제) 회의실 배정
