@@ -1,7 +1,7 @@
 package level18_그리디알고리즘_Clear.Q5_13305;
 
 /*
-문제)
+문제) 주유소
     어떤 나라에 N개의 도시가 있다.
     이 도시들은 일직선 도로 위에 있다.
     편의상 일직선을 수평 방향으로 두자.
@@ -109,15 +109,15 @@ public class Main {
 
         price = cityList.get(0).price;
         dist = cityList.get(0).distance;
-
         totalPrice = price * dist;
 
         for (int i = 1; i < numOfCity - 1; i++) {
+
             if (cityList.get(i).price < price) {
                 price = cityList.get(i).price;
             }
-            totalPrice += price * cityList.get(i).distance;
-
+            dist = cityList.get(i).distance;
+            totalPrice += price * dist;
         }
         System.out.println(totalPrice);
     }

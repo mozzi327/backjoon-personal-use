@@ -63,11 +63,13 @@ public class Main {
             str = br.readLine().split(" ");
             meetingList.add(new Meeting(Integer.parseInt(str[0]), Integer.parseInt(str[1])));
         }
+
+
         Collections.sort(meetingList);
 
-//        for (Meeting me:meetingList) {
-//            System.out.println("start = " + me.startTime+", end = "+me.endTime);
-//        }
+        for (Meeting me:meetingList) {
+            System.out.println("start = " + me.startTime+", end = "+me.endTime);
+        }
 
         int ans = greedy(meetingList);
         System.out.println(ans);
