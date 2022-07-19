@@ -27,6 +27,8 @@ package level20_큐_덱_.Q7_5430;
 */
 
 import java.io.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 
 public class Main {
@@ -34,46 +36,81 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int testN = Integer.valueOf(br.readLine());
+
+        // testN : 총 테스트케이스 수
+        int testN = Integer.parseInt(br.readLine());
         char[] func;
-        int numOfArray;
+        int numOfElement;
         String str;
         String[] tmp;
-        LinkedList<Integer> dequeArray;
+        Deque<Integer> dequeArray;
         boolean err;
         boolean isRight;
 
 
+        /*
+            예시)             배열 :  1, 2, 3, 4
+                      리버스옵션(R) :  4, 3, 2, 1
+                      -> 따라서 왼쪽에서 시작할 것인지, 오른쪽에서 시작할 것인지만 파악하면 됨, 굳이 덱 넣고 빼고 안해도 된다.
 
-        // 1, 3, 5, 7.... 홀수 인덱스 배열
+                      델리트옵션(D) :     3, 2, 1
+               최종적으로 만들어야될 것 :  리스트 or error
+        */
         for (int i = 0; i < testN; i++) {
-            dequeArray = new LinkedList<>();
+            /*
+                dequeArray   : 덱은 링크드리스트로 테스트케이스가 끝나면 계속 초기화
+                err          : 에러가 발생했는지 여부, 테스트케이스가 끝나면 계속 초기화
+                isRight      : 리스트 시작 방향(왼쪽, 오른쪽) 테스트케이스가 끝나면 계속 초기화 (false : 왼쪽)
+                func         : 옵션 값을 저장한 변수(타입은 Character 배열)
+                numOfElement : 배열 원소의 개수
+                str          : 입력받은 리스트 모양 문자열에 substring 메서드를 사용하기 위한 임시 변수
+                tmp          : substring 메서드와 split 메서드를 사용해 만든 String 배열
+            */
+
+            dequeArray = new ArrayDeque<>();
             err = false;
             isRight = false;
             func = br.readLine().toCharArray();
-            numOfArray = Integer.valueOf(br.readLine());
+            numOfElement = Integer.parseInt(br.readLine());
             str = br.readLine();
             tmp = str.substring(1, str.length() - 1).split(",");
-//            tmp = br.readLine().replaceAll("[\\[\\]]", "").split(",");
+
+            // forEach(Enhanced For)문을 사용해 String 배열의 값이 있는지 확인하고 덱에 값을 넣어준다.
             for (String s: tmp) {
-               if (!s.equals("")) dequeArray.add(Integer.valueOf(s));
+               if (!s.equals("")) dequeArray.add(Integer.parseInt(s));
             }
 
+            // 총 옵션의 길이만큼
             for (int j = 0; j < func.length; j++) {
+                // 델리트 옵션일 경우
                 if (func[j]=='D') {
+                    // 덱의 크기가 0이라면 에러를 버퍼에 쌓아주고 break 문(중복 에러 방지)을 통해 반복문을 탈출해준다.
+                    // 리스트 후처리를 위한 err, err 발생 시 값이 true 가 된다. -> true 일 경우 리스트 후처리 x
                     if (dequeArray.size() == 0) {
                         bw.write("error\n");
                         err = true;
                         break;
                     }
+                    // 델리트 옵션에서 리스트가 0이 아닌 경우,
+                    // isRight 가 참인지 아닌지를 보고 방향에 따라 remove를 해준다.
                     if (isRight) dequeArray.removeLast();
                     else dequeArray.removeFirst();
+                    // 2, 3, 4
+                    // Reverse
+                    // 4, 3, 2
 
+                    // 리버스 옵션인 경우 isRight 값을 뒤집어준다.
                 } else isRight = !isRight;
             }
+            // 1234 RDD 4321 -> 21
+            // 위에 반복문에서 에러가 발생하지 않았을 경우,
+            // 반복문을 무사히 마친 후에 대한 후처리(리스트가 살아남은 경우)
             if (!err) {
                 bw.write("[");
+                // 덱의 사이즈 0이 아닐 때까지 리스트 원소의 버퍼를 계속 쌓아준다.
                 while (dequeArray.size()!=0) {
+                    // 조건연산자 사용 isRight = true 일 때 오른쪽부터 리스트를 만들어준다. 아닐 경우 반대.
+                    // 그리고 remove 후 덱의 크기가 0이 아니라면(덱의 제일 마지막이 아닌 경우) 원소 구분 콤마를 붙여준다.
                     bw.write(isRight ? String.valueOf(dequeArray.removeLast()) : String.valueOf(dequeArray.removeFirst()));
                     if (dequeArray.size()!=0) bw.write(",");
                 }
@@ -81,6 +118,7 @@ public class Main {
             }
 
         }
+        // 메모리 제거
         br.close();
         bw.close();
     }

@@ -5,7 +5,7 @@ package example;
 // 입력은 Scanner 표준 양식을 준수
 // 출력은 main문에서 System.out.print문
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {

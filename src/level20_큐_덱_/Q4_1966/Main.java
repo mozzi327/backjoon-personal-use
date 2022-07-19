@@ -65,7 +65,7 @@ public class Main {
         int numOfPrint ;
         int totalNumOfPrint;
         QueueToken qt;
-        String [] tmp;
+        String [] tmp; // 1,2,3,4 -> 스트링 배열
         int [] priority = {};
 
 
@@ -86,7 +86,8 @@ public class Main {
                 continue;
             }
 
-            // tmp 배열과 Stream 클래스를 활용해 우선순위에 대한 int형 배열을 만들어준 뒤, Arrays.sort()메서드를 사용해 priority 배열을 정렬해준다. (default : 오름차순 정렬)
+            // tmp 배열과 Stream 클래스를 활용해 우선순위에 대한 int형 배열을 만들어준 뒤,
+            // Arrays.sort()메서드를 사용해 priority 배열을 정렬해준다. (default : 오름차순 정렬)
             priority = Stream.of(tmp).mapToInt(Integer::parseInt).toArray();
             Arrays.sort(priority);
 
@@ -103,6 +104,8 @@ public class Main {
 
                     // priority 배열이 오름차순 정렬이기 때문에 배열의 가장 마지막 부분(가장 큰 값)부터 qt.prior(우선순위)와 비교
                     // 출력이 되서 카운트가 되면 우선순위의 변경이 일어나므로 우선순위 배열의 인덱스에 totalNumOfPrint(총 출력 횟수)를 빼줘야 한다.
+
+                    // 1 1 1 1 2 3
                     if (priority[priority.length - 1 - totalNumOfPrint] == qt.prior) {
 
                         // 조건문을 만족하면 일단 출력물은 +1이 된다.
@@ -119,7 +122,6 @@ public class Main {
                         // 우선순위가 맞는 것을 못찾았다면 앞에서 하나 가져왔던 것을 도로 뒤에 붙여준다.
                         printQueue.add(qt);
                     }
-
                 }
             // 문자열 버퍼를 쌓아 while 문을 탈출했다면 Queue를 초기화해준다.
             printQueue.clear();
@@ -139,6 +141,5 @@ public class Main {
             this.idx = idx;
             this.prior = prior;
         }
-
     }
 }
