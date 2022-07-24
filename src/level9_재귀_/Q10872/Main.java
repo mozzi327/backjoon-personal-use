@@ -1,4 +1,4 @@
-package level9.Q10872;
+package level9_재귀_.Q10872;
 
 // 문제이름 : 팩토리얼
 // 주제    : 재귀

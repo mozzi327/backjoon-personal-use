@@ -51,7 +51,6 @@ public class Main {
         backTrackingSudoku(0, 0);
     }
 
-
     public static void backTrackingSudoku(int row, int col) {
         if (col == 9) {
             backTrackingSudoku(row + 1, 0);

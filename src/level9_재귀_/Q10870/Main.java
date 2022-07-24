@@ -1,4 +1,4 @@
-package level9.Q10870;
+package level9_재귀_.Q10870;
 
 // 문제이름 : 피보나치 수
 // 주제    : 재귀

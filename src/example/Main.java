@@ -48,7 +48,6 @@ public class Main {
             input = Long.parseLong(br.readLine());
             end = Math.max(end, input);
             ownedLanArray[i] = input;
-
         }
 
         maxCutLanLine(start, end);

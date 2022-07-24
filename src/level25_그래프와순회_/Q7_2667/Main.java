@@ -11,7 +11,7 @@ package level25_그래프와순회_.Q7_2667;
 
 입력)
     첫 번째 줄에는 지도의 크기 N(정사각형이므로 가로와 세로의 크기는 같으며 5≤N≤25)이 입력되고,
-    그 다음 N줄에는 각각 N개의 자료(0혹은 1)가 입력된다.
+    그 다음 N 줄에는 각각 N개의 자료(0혹은 1)가 입력된다.
 
 출력)
     첫 번째 줄에는 총 단지수를 출력하시오.
@@ -38,8 +38,6 @@ public class Main {
         N = Integer.parseInt(br.readLine());
         map = new int[N][N];
         visitMap = new boolean[N][N];
-        int returnX = 0;
-        int returnY = 0;
         String oneLine = "";
         int tmp = 0;
         ArrayList<Integer> ans = new ArrayList<>();
@@ -89,7 +87,6 @@ public class Main {
             for (int i = 0; i < 4; i++) {
                 int curY = cy + dy[i];
                 int curX = cx + dx[i];
-
 
                 if (curX < 0 || N <= curX || curY < 0 || N <= curY) continue;
                 if (!visitMap[curY][curX] && map[curY][curX] == 1) {

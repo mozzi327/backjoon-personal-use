@@ -1,4 +1,4 @@
-package level9.Q2447;
+package level9_재귀_.Q2447;
 
 // 문제이름 : 별찍기
 // 주제    : 재귀
