@@ -33,8 +33,87 @@ package level25_그래프와순회_.Q8_1012;
 
 */
 
+import java.io.*;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
 public class Main {
-    public static void main(String[] args) {
-        
+    static int col;
+    static int row;
+    static int[][] cabbageFarm;
+    static int[] dx = {-1, 1, 0, 0};
+    static int[] dy = {0, 0, 1, -1};
+    static boolean[][] visitedFarmArea;
+    static int minimumNumOfWhiteWarm = 0;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int numOfTestCase = Integer.parseInt(br.readLine());
+        int numOfCabbage = 0;
+        StringTokenizer MNK;
+        StringTokenizer inputXy;
+        int x, y;
+
+        for (int testCase = 0; testCase < numOfTestCase; testCase++) {
+
+            // M : 가로길이
+            // N : 세로길이
+            // K : 배추가 심어져있는 위치 갯수
+            MNK = new StringTokenizer(br.readLine());
+            col = Integer.parseInt(MNK.nextToken());
+            row = Integer.parseInt(MNK.nextToken());
+            numOfCabbage = Integer.parseInt(MNK.nextToken());
+
+            cabbageFarm = new int[row][col];
+            visitedFarmArea = new boolean[row][col];
+
+            // 입력받을 xy 쌍 배열에 기입(1)
+            for (int i = 0; i < numOfCabbage; i++) {
+                inputXy = new StringTokenizer(br.readLine());
+                x = Integer.parseInt(inputXy.nextToken());
+                y = Integer.parseInt(inputXy.nextToken());
+                cabbageFarm[y][x] = 1;
+            }
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    if (cabbageFarm[i][j] != 0 && !visitedFarmArea[i][j]) {
+                        bfsCabbageFarm(i, j);
+                        minimumNumOfWhiteWarm++;
+                    }
+                }
+            }
+            bw.write(minimumNumOfWhiteWarm + "\n");
+            minimumNumOfWhiteWarm = 0;
+        }
+
+        br.close();
+        bw.close();
+    }
+
+    public static void bfsCabbageFarm(int y, int x) {
+        Queue<int[]> cabbageQue = new LinkedList<>();
+        cabbageQue.offer(new int[]{y, x});
+        visitedFarmArea[y][x] = true;
+
+        while (!cabbageQue.isEmpty()) {
+            int[] que = cabbageQue.poll();
+            int cy = que[0];
+            int cx = que[1];
+
+            for (int i = 0; i < 4; i++) {
+                int CurY = cy + dy[i];
+                int CurX = cx + dx[i];
+                if (CurY < 0 | CurX < 0 | row <= CurY | col <= CurX) continue;
+                if (cabbageFarm[CurY][CurX] != 1 || visitedFarmArea[CurY][CurX]) continue;
+                if (cabbageFarm[CurY][CurX] == 1 && !visitedFarmArea[CurY][CurX]) {
+                    cabbageQue.offer(new int[]{CurY, CurX});
+                    visitedFarmArea[CurY][CurX] = true;
+                }
+
+            }
+        }
     }
 }
