@@ -59,6 +59,7 @@ public class Main {
     }
 
     public static long padovanSequence(int num) {
+        // num 은 파도반 수열의 수
         if (num == 0) return 0;
         else if (num == 1) return 1;
         else if (num == 2) return 1;
