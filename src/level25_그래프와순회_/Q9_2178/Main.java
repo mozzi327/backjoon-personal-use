@@ -6,9 +6,9 @@ package level25_그래프와순회_.Q9_2178;
     N×M 크기의 배열로 표현되는 미로가 있다.
 
     1	0	1	1	1	1
-    1	0	1	0	1	0
-    1	0	1	0	1	1
-    1	1	1	0	1	1
+    2	0	1	0	1	0
+    3	0	1	0	1	1
+    4	5	6	0	1	1
     미로에서 1은 이동할 수 있는 칸을 나타내고, 0은 이동할 수 없는 칸을 나타낸다.
     이러한 미로가 주어졌을 때, (1, 1)에서 출발하여 (N, M)의 위치로 이동할 때 지나야 하는 최소의 칸 수를 구하는 프로그램을 작성하시오.
     한 칸에서 다른 칸으로 이동할 때, 서로 인접한 칸으로만 이동할 수 있다.
@@ -83,7 +83,7 @@ public class Main {
                 if(curX < 0 || width <= curX || curY < 0 || height <= curY ) {
                     continue;
                 }
-                if (visitMaze[curY][curX] == true || maze[curY][curX] == 0) {
+                if (visitMaze[curY][curX]|| maze[curY][curX] == 0) {
                     continue;
                 }
 
