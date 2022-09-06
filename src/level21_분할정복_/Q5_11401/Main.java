@@ -16,19 +16,12 @@ package level21_분할정복_.Q5_11401;
 
 */
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 public class Main {
     private static long P = 1_000_000_007;
 
     public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st = new StringTokenizer(br.readLine());
-//        int N = Integer.parseInt(st.nextToken());
-//        int K = Integer.parseInt(st.nextToken());
 
         // 식 : N!/(K!*(N-K)!) mod P
         int N = readInt();
@@ -64,13 +57,6 @@ public class Main {
         else return totalValue;
     }
 
-//    private static long binomial(long base, long exponent) {
-//        if (exponent == 1) return base % P;
-//        long powerToValue = binomial(base, exponent / 2);
-//
-//        if (exponent % 2 == 1) return (powerToValue * powerToValue % P) * base % P;
-//        return powerToValue * powerToValue % P;
-//    }
 
     private static int readInt() throws IOException {
         boolean isNegative = false;

@@ -26,14 +26,14 @@ public class Main {
         System.out.println(result);
     }
 
-    private static long power(int base, int exponent, int divValue) {
+    private static long power(int base, int exponent, int P) {
 
         if (exponent == 0) return 1;
         int half =  exponent / 2;
-        long powerToValue = power(base, half, divValue);
-        long totalValue = (powerToValue * powerToValue) % divValue;
+        long powerToValue = power(base, half, P);
+        long totalValue = (powerToValue * powerToValue) % P;
 
-        if (exponent % 2 == 1) return (base * totalValue) % divValue;
+        if (exponent % 2 == 1) return (base * totalValue) % P;
         else return totalValue;
     }
 
