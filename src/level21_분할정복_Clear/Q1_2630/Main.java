@@ -1,4 +1,4 @@
-package level21_분할정복_.Q1_2630;
+package level21_분할정복_Clear.Q1_2630;
 
 import java.io.IOException;
 

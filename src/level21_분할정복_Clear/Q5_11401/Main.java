@@ -1,4 +1,4 @@
-package level21_분할정복_.Q5_11401;
+package level21_분할정복_Clear.Q5_11401;
 
 /*
 문제) 이항 계수 3

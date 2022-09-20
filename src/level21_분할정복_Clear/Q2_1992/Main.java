@@ -1,4 +1,4 @@
-package level21_분할정복_.Q2_1992;
+package level21_분할정복_Clear.Q2_1992;
 
 /*
 문제) 쿼드트리

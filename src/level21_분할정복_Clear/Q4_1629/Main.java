@@ -1,4 +1,4 @@
-package level21_분할정복_.Q4_1629;
+package level21_분할정복_Clear.Q4_1629;
 
 /*
 문제) 곱셈
