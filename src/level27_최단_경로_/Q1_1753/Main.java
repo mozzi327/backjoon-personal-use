@@ -28,19 +28,18 @@ import java.util.PriorityQueue;
 */
 
 public class Main {
-    private static int V, E, K;
-    private static ArrayList<ArrayList<Node>> graph;
 
+    // 비용에 대한 정렬을 위해 Comparable을 구현
     public static class Node implements Comparable<Node> {
-        public int vertex;
-        public int distance;
+        public int vertex; // index
+        public int distance; // 비용
 
         public Node(int vertex, int distance) {
             this.vertex = vertex;
             this.distance = distance;
         }
 
-        @Override
+        @Override // 비용을 기준으로 오름차순 정렬
         public int compareTo(Node node) {
             return this.distance - node.distance;
         }
