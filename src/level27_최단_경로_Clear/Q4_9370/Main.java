@@ -1,4 +1,4 @@
-package level27_최단_경로_.Q4_9370;
+package level27_최단_경로_Clear.Q4_9370;
 
 /*
 문제) 미확인 도착지

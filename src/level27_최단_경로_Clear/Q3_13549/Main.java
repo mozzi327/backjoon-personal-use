@@ -1,4 +1,4 @@
-package level27_최단_경로_.Q3_13549;
+package level27_최단_경로_Clear.Q3_13549;
 
 /*
 문제) 숨바꼭질 3
