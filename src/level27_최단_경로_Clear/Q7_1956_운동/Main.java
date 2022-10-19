@@ -51,8 +51,8 @@ public class Main {
         }
 
         for (int i = 0; i < E; i++) {
-            a = readInt() - 1;
-            b = readInt() - 1;
+            a = readInt() - 1; // 출발 노드 - 1
+            b = readInt() - 1; // 도착 노드 - 1
             c = readInt();
 
             dist[a][b] = c;
