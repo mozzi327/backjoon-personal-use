@@ -1,4 +1,4 @@
-package level15_백트래킹_.Q6_2580;
+package level15_백트래킹_.Q6_2580_스도쿠;
 
 /*
 문제

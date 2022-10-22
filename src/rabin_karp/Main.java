@@ -5,64 +5,39 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
-//    public static void main(String[] args) {
-//        long beforeTime = System.currentTimeMillis();
-//        String parent = "abcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwddqwdascdasdasdaabacabacacabcabcsbabascbacbacacqcabcacbacbcabcabc";
-//        String pattern = "abc";
-//        int parentSize = parent.length();
-//        int patternSize = pattern.length();
-//        int power = 1;
-//        int parentHash = 0;
-//        int patternHash = 0;
-//        int result = 0;
-//
-//        for (int i = 0; i <= parentSize - patternSize; i++) {
-//            if (i == 0) {
-//                for (int j = 0; j < patternSize; j++) {
-//                    parentHash += parent.charAt(patternSize - 1 - j) * power;
-//                    patternHash += pattern.charAt(patternSize - 1 - j) * power;
-//                    if (j < patternSize - 1) power *= 2;
-//                }
-//            } else {
-//                parentHash = 2 * (parentHash - parent.charAt(i - 1) * power) + parent.charAt(patternSize - 1 + i);
-//            }
-//            if (parentHash == patternHash) {
-//                boolean finded = true;
-//                for (int j = 0; j < patternSize; j++) {
-//                    if (parent.charAt(i + j) != pattern.charAt(j)) {
-//                        finded = false;
-//                        break;
-//                    }
-//                }
-//                if (finded) {
-//                    System.out.println(i + 1 + "번째에서 발견했습니다.");
-//                    result++;
-//                }
-//            }
-//        }
-//
-//        System.out.println(result);
-//        long afterTime = System.currentTimeMillis();
-//        double secDiffTime = (afterTime - beforeTime) /1000.0;
-//        System.out.println(secDiffTime);
-//    }
-
-
-
     public static void main(String[] args) {
         long beforeTime = System.currentTimeMillis();
         String parent = "abcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwddqwdascdasdasdaabacabacacabcabcsbabascbacbacacqcabcacbacbcabcabc";
-        String pattern = "abc";
+        String pattern = "dasdasdasdwqdqwddqwdascdasdasdaabacabacacabcabcsbabascbacbacacqcabcacba";
         int parentSize = parent.length();
         int patternSize = pattern.length();
-        int patternHash = pattern.hashCode();
+        int power = 1;
+        int parentHash = 0;
+        int patternHash = 0;
         int result = 0;
 
         for (int i = 0; i <= parentSize - patternSize; i++) {
-            int partHash = parent.substring(i, i + patternSize).hashCode();
-            if (partHash == patternHash) {
-                System.out.println(i + 1+ "번째에서 발견됐습니다.");
-                result ++;
+            if (i == 0) {
+                for (int j = 0; j < patternSize; j++) {
+                    parentHash += parent.charAt(patternSize - 1 - j) * power;
+                    patternHash += pattern.charAt(patternSize - 1 - j) * power;
+                    if (j < patternSize - 1) power *= 2;
+                }
+            } else {
+                parentHash = 2 * (parentHash - parent.charAt(i - 1) * power) + parent.charAt(patternSize - 1 + i);
+            }
+            if (parentHash == patternHash) {
+                boolean finded = true;
+                for (int j = 0; j < patternSize; j++) {
+                    if (parent.charAt(i + j) != pattern.charAt(j)) {
+                        finded = false;
+                        break;
+                    }
+                }
+                if (finded) {
+                    System.out.println(i + 1 + "번째에서 발견했습니다.");
+                    result++;
+                }
             }
         }
 
@@ -71,6 +46,31 @@ public class Main {
         double secDiffTime = (afterTime - beforeTime) /1000.0;
         System.out.println(secDiffTime);
     }
+
+
+
+//    public static void main(String[] args) {
+//        long beforeTime = System.currentTimeMillis();
+//        String parent = "abcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwdbcdeeadsadwqdasadgsdfabcdaabcaaacbabdasdasdasdwqdqwddqwdascdasdasdaabacabacacabcabcsbabascbacbacacqcabcacbacbcabcabc";
+//        String pattern = "dasdasdasdwqdqwddqwdascdasdasdaabacabacacabcabcsbabascbacbacacqcabcacba";
+//        int parentSize = parent.length();
+//        int patternSize = pattern.length();
+//        int patternHash = pattern.hashCode();
+//        int result = 0;
+//
+//        for (int i = 0; i <= parentSize - patternSize; i++) {
+//            int partHash = parent.substring(i, i + patternSize).hashCode();
+//            if (partHash == patternHash) {
+//                System.out.println(i + 1+ "번째에서 발견됐습니다.");
+//                result ++;
+//            }
+//        }
+//
+//        System.out.println(result);
+//        long afterTime = System.currentTimeMillis();
+//        double secDiffTime = (afterTime - beforeTime) /1000.0;
+//        System.out.println(secDiffTime);
+//    }
 }
 
 class Main2 {
