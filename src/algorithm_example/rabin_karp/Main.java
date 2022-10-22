@@ -1,4 +1,4 @@
-package rabin_karp;
+package algorithm_example.rabin_karp;
 
 
 import java.util.LinkedList;

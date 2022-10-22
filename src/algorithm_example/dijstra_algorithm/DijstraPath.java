@@ -1,4 +1,4 @@
-package dijstra_algorithm;
+package algorithm_example.dijstra_algorithm;
 
 /*
     다익스트라 알고리즘 예제 : 우선순위 큐 활용

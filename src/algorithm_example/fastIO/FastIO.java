@@ -1,4 +1,4 @@
-package fastIO;
+package algorithm_example.fastIO;
 
 import java.io.IOException;
 import java.util.Arrays;

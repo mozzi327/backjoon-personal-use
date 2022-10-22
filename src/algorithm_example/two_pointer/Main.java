@@ -1,4 +1,4 @@
-package two_pointer;
+package algorithm_example.two_pointer;
 
 import java.util.Arrays;
 

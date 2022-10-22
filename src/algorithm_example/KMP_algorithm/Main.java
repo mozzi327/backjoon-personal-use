@@ -1,4 +1,4 @@
-package KMP_algorithm;
+package algorithm_example.KMP_algorithm;
 
 import java.util.Arrays;
 
