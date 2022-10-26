@@ -75,7 +75,6 @@ public class Main {
                 System.out.println("NO");
                 return;
             }
-
         }
 
         System.out.println("YES");

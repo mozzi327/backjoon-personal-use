@@ -31,4 +31,17 @@ public class FastIO {
             }
         }
     }
+
+
+
+    private static String readString() throws IOException {
+        char input;
+        StringBuilder str = new StringBuilder();
+        while (true) {
+            input = (char)System.in.read();
+            if (input == '\n' || input == ' ')
+                return str.toString();
+            else str.append(input);
+        }
+    }
 }
