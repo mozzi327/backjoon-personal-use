@@ -1,4 +1,4 @@
-package level32_유니온파인드_.Q3_4195_친구네트워크;
+package level32_유니온파인드_Clear.Q3_4195_친구네트워크;
 
 import java.io.IOException;
 import java.util.HashMap;

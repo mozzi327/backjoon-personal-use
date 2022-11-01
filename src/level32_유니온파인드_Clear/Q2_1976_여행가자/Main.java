@@ -1,4 +1,4 @@
-package level32_유니온파인드_.Q2_1976_여행가자;
+package level32_유니온파인드_Clear.Q2_1976_여행가자;
 
 import java.io.IOException;
 
