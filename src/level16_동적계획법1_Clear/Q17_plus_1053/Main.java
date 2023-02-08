@@ -1,4 +1,4 @@
-package level16_동적계획법1_Clear.Q17plus_1053;
+package level16_동적계획법1_Clear.Q17_plus_1053;
 
 /*
 문제) 펠린드롬 공장

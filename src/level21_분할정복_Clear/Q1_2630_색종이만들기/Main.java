@@ -34,8 +34,8 @@ import java.io.IOException;
     둘째 줄에는 파란색 색종이의 개수를 출력한다.
     시간 제한 : 1초
     메모리 제한 128MB
-
 */
+
 public class Main {
     private static int[][] colorPaperArr;
     private static int blueColorCount = 0;
